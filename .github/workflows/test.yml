@@ -9,4 +9,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: ./
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: "clone-to-solid-pod"
+      - uses: ./clone-to-solid-pod
