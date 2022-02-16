@@ -1,0 +1,25 @@
+name: 'Clone to Solid Pod'
+description: 'Clones the contents of a project to a Solid Pod'
+author: 'Jackson Morgan'
+
+inputs:
+  REFRESH_TOKEN:
+    description: 'The refresh token retrieved from @input/generate-oidc-token'
+    required: true
+  CLIENT_ID:
+    description: 'The client id retrieved from @input/generate-oidc-token'
+    required: true
+  CLIENT_SECRET:
+    description: 'The client secret retrieved from @input/generate-oidc-token'
+    required: true
+  OIDC_ISSUER:
+    description: 'The oidc issuer retrieved from @inrupt/generate-oidc-token'
+    required: true
+  GITHUB_FOLDER_TO_CLONE:
+    description: 'The sub-folder of the github repo to clone. If none is provided it uses root.'
+  POD_WRITE_CONTAINER:
+    description: 'The container the Pod will write to.'
+  
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
