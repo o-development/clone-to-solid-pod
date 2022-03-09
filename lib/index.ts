@@ -8,7 +8,7 @@ const fileClient = new SolidFileClient(auth);
 console.log(process.env.INPUT_OIDC_ISSUER);
 
 async function run() {
-  const inputPath = "/clone-to-solid-pod/testClone/";
+  const inputPath = `${process.cwd()}/testClone/`;
   const targetContainer = process.env.INPUT_TARGET_CONTAINER;
   const refreshToken = process.env.INPUT_REFRESH_TOKEN;
   const clientId = process.env.INPUT_CLIENT_ID;
@@ -23,7 +23,9 @@ async function run() {
   });
 
   if (session.isLoggedIn) {
+    console.log(`Copying folder\n  file://${inputPath}\n  to ${targetContainer}`);
     await fileClient.copyFolder(`file://${inputPath}`, targetContainer);
+    process.exit();
   }
 }
 run();
