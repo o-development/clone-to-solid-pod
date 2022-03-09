@@ -1,6 +1,6 @@
 {
   "name": "clone-to-solid-pod",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A github action that will clone a github repo to a Solid Pod",
   "main": "index.js",
   "scripts": {
@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "dotenv": "^16.0.0",
-    "solid-file-client": "^2.1.0",
-    "solid-node-client": "^2.1.2"
+    "solid-file-client": "^2.1.2",
+    "solid-node-client": "^2.1.5"
   }
-}
+} 
