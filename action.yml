@@ -15,10 +15,12 @@ inputs:
   OIDC_ISSUER:
     description: 'The oidc issuer retrieved from @inrupt/generate-oidc-token'
     required: true
-  GITHUB_FOLDER_TO_CLONE:
+  INPUT_PATH:
     description: 'The sub-folder of the github repo to clone. If none is provided it uses root.'
-  POD_WRITE_CONTAINER:
+    required: true
+  TARGET_CONTAINER:
     description: 'The container the Pod will write to.'
+    required: true
   
 runs:
   using: 'node12'

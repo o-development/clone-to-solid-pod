@@ -13,4 +13,11 @@ jobs:
         uses: actions/checkout@v2
         with:
           path: "clone-to-solid-pod"
-      - uses: ./clone-to-solid-pod
+      - uses: ./clone-to-solid-pod 
+        with:
+          input_path: /clone-to-solid-pod/testClone/
+          target_container: https://solidweb.me/jackson/cloned/
+          refresh_token: 694GW5Kf3gEg5cxViQQOyml4XwQtsEreNnSd5js2bs_
+          client_id: FToqh0yJpCMODqAIoOmL7
+          client_secret: FMLZj2k5ffRYR6athdTga_uvK1vgNhheiDqjjUeUVHbFRfOBZ7cIyDeSPNfliSasKcyD4wPtNl0dNWoo-HDlSA
+          oidc_issuer: https://solidweb.me/

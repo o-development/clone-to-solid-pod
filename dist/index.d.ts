@@ -1,1 +1,1 @@
-declare function run(): Promise<void>;
+import "dotenv/config";
