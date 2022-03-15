@@ -99625,11 +99625,11 @@ var auth = new solid_node_client_1.SolidNodeClient();
 var fileClient = new solid_file_client_1.default(auth);
 function run() {
     return __awaiter(this, void 0, void 0, function () {
-        var inputPath, targetContainer, refreshToken, clientId, clientSecret, oidcIssuer, _a, _b, session, err_1;
-        return __generator(this, function (_c) {
-            switch (_c.label) {
+        var inputPath, targetContainer, refreshToken, clientId, clientSecret, oidcIssuer, _a, _b, _c, _d, session, err_1;
+        return __generator(this, function (_e) {
+            switch (_e.label) {
                 case 0:
-                    _c.trys.push([0, 5, , 6]);
+                    _e.trys.push([0, 6, , 7]);
                     inputPath = core.getInput("input_path");
                     targetContainer = core.getInput("target_container");
                     refreshToken = core.getInput("refresh_token");
@@ -99641,28 +99641,32 @@ function run() {
                     _b = (_a = console).log;
                     return [4 /*yield*/, (0, fs_extra_1.readdir)(path_1.default.join(__dirname, "../"))];
                 case 1:
-                    _b.apply(_a, [_c.sent()]);
+                    _b.apply(_a, [_e.sent()]);
+                    _d = (_c = console).log;
+                    return [4 /*yield*/, (0, fs_extra_1.readdir)("/home")];
+                case 2:
+                    _d.apply(_c, [_e.sent()]);
                     return [4 /*yield*/, auth.login({
                             clientId: clientId,
                             clientSecret: clientSecret,
                             refreshToken: refreshToken,
                             oidcIssuer: oidcIssuer,
                         })];
-                case 2:
-                    session = _c.sent();
-                    if (!session.isLoggedIn) return [3 /*break*/, 4];
-                    return [4 /*yield*/, fileClient.copyFolder("file://".concat(inputPath), targetContainer)];
                 case 3:
-                    _c.sent();
+                    session = _e.sent();
+                    if (!session.isLoggedIn) return [3 /*break*/, 5];
+                    return [4 /*yield*/, fileClient.copyFolder("file://".concat(inputPath), targetContainer)];
+                case 4:
+                    _e.sent();
                     console.log("done");
-                    _c.label = 4;
-                case 4: return [3 /*break*/, 6];
-                case 5:
-                    err_1 = _c.sent();
+                    _e.label = 5;
+                case 5: return [3 /*break*/, 7];
+                case 6:
+                    err_1 = _e.sent();
                     console.error(err_1);
                     process.exit(1);
-                    return [3 /*break*/, 6];
-                case 6: return [2 /*return*/];
+                    return [3 /*break*/, 7];
+                case 7: return [2 /*return*/];
             }
         });
     });
