@@ -15,9 +15,9 @@ jobs:
           path: "clone-to-solid-pod"
       - uses: ./clone-to-solid-pod 
         with:
-          input_path: /clone-to-solid-pod/testClone/
+          input_path: /Users/jackson/O/clone-to-solid-pod/clone-to-solid-pod/testClone/
           target_container: https://solidweb.me/jackson/cloned/
-          refresh_token: 694GW5Kf3gEg5cxViQQOyml4XwQtsEreNnSd5js2bs_
-          client_id: FToqh0yJpCMODqAIoOmL7
-          client_secret: FMLZj2k5ffRYR6athdTga_uvK1vgNhheiDqjjUeUVHbFRfOBZ7cIyDeSPNfliSasKcyD4wPtNl0dNWoo-HDlSA
-          oidc_issuer: https://solidweb.me/
+          refresh_token: 9YMrlNtCCarTirt_WBS0l1eKBH7F_xcrxGGkGxuGAZe
+          client_id: iXYdLExp7RFWLy8TJm5JZ
+          client_secret: I5B92WJm4Bo1052dKLrVDaOzDnr-KqOgYEklcWhoExw7yNhU-Lh_mJ7TEyElP4y4XLlH3nVkdXUFlClalq4aRA
+          oidc_issuer: https://solidweb.me/ 
