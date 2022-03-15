@@ -99643,7 +99643,7 @@ function run() {
                 case 1:
                     _b.apply(_a, [_e.sent()]);
                     _d = (_c = console).log;
-                    return [4 /*yield*/, (0, fs_extra_1.readdir)("/home")];
+                    return [4 /*yield*/, (0, fs_extra_1.readdir)("/home/runner/work")];
                 case 2:
                     _d.apply(_c, [_e.sent()]);
                     return [4 /*yield*/, auth.login({

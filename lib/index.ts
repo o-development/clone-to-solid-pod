@@ -20,7 +20,7 @@ async function run() {
     console.log(inputPath);
     console.log(__dirname);
     console.log(await readdir(path.join(__dirname, "../")));
-    console.log(await readdir("/home"));
+    console.log(await readdir("/home/runner/work"));
 
     const session = await auth.login({
       clientId,
