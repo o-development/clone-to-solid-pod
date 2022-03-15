@@ -99625,10 +99625,11 @@ var auth = new solid_node_client_1.SolidNodeClient();
 var fileClient = new solid_file_client_1.default(auth);
 function run() {
     return __awaiter(this, void 0, void 0, function () {
-        var inputPath, targetContainer, refreshToken, clientId, clientSecret, oidcIssuer, _a, _b, session;
+        var inputPath, targetContainer, refreshToken, clientId, clientSecret, oidcIssuer, _a, _b, session, err_1;
         return __generator(this, function (_c) {
             switch (_c.label) {
                 case 0:
+                    _c.trys.push([0, 5, , 6]);
                     inputPath = core.getInput("input_path");
                     targetContainer = core.getInput("target_container");
                     refreshToken = core.getInput("refresh_token");
@@ -99655,7 +99656,13 @@ function run() {
                     _c.sent();
                     console.log("done");
                     _c.label = 4;
-                case 4: return [2 /*return*/];
+                case 4: return [3 /*break*/, 6];
+                case 5:
+                    err_1 = _c.sent();
+                    console.error(err_1);
+                    process.exit(1);
+                    return [3 /*break*/, 6];
+                case 6: return [2 /*return*/];
             }
         });
     });
