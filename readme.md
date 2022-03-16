@@ -4,6 +4,38 @@ A github action that will clone a github repo to a Solid Pod
 
 ## Instructions
 
+## Integrating a github hook
+
+Create a github hooks file at `/.github/workflows/myfilename.yml`
+
+```
+name: pushToPod
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  pushToPod:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: o-development/clone-to-solid-pod@master
+        with:
+          input_path: /home/runner/work/myRepositoryName/myRepositoryName/
+          target_container: https://solid.pod/path/to/desired/container
+          refresh_token: ${{ secrets.INPUT_REFRESH_TOKEN }}
+          client_id: ${{ secrets.INPUT_CLIENT_ID }}
+          client_secret: ${{ secrets.INPUT_CLIENT_SECRET }}
+          oidc_issuer: ${{ secrets.INPUT_OIDC_ISSUER }}
+```
+
+Run `npx @inrupt/generate-oidc-token` to get authentication details for your server.
+
+Include the results in your repository secrets.
+
 ## Running the program without the github hook
 ```
 git clone git@github.com:o-development/clone-to-solid-pod.git

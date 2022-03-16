@@ -1,9 +1,6 @@
-import "dotenv/config";
 import { SolidNodeClient } from "solid-node-client";
 import SolidFileClient from "solid-file-client";
 import * as core from "@actions/core";
-import { readdir } from "fs-extra";
-import path from "path";
 
 const auth = new SolidNodeClient();
 const fileClient = new SolidFileClient(auth);
@@ -16,11 +13,6 @@ async function run() {
     const clientId = core.getInput("client_id");
     const clientSecret = core.getInput("client_secret");
     const oidcIssuer = core.getInput("oidc_issuer");
-
-    console.log(inputPath);
-    console.log(__dirname);
-    console.log(await readdir(path.join(__dirname, "../")));
-    console.log(await readdir("/home/runner/work"));
 
     const session = await auth.login({
       clientId,
